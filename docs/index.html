@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -151,13 +150,13 @@
 						<li>sha256</li>
 						<li>sha512</li>
 					</ul> 
-					You just need to specify us which hashing algorithm you are going to use
+					You just need to specify us which hashing algorithm you are going to use.
 					</p>
 					
 					<p><b>Pros and Cons</b></p>
 					<p>Pros: Hard to reverse, unique to every input, provides security. By adding a random salt value, you create a very different hashing algorithm. You also increase the search space size for brute force attacks, which run through all possible options. </p>
 					
-					<p>Cons: You have to make little change in you existing code so that whenever you are redirecting back to us, you can compute and add hash in redirect URL
+					<p>Cons: You have to make little change in you existing code so that whenever you are redirecting back to us, you can compute and add hash in redirect URL.
 					</p>
                 
                     <section class="sub-block" id="hash-implementation">
@@ -168,7 +167,7 @@
                             </a>
                         </h3>
                     
-                        <p>In order to generate HMAC checksum, you will need to have a specific secret key, which is common for both parties, and will be shared after reaching out to Sample Junction</p>
+                        <p>In order to generate HMAC checksum, you will need to have a specific secret key, which is common for both parties, and will be shared after reaching out to Sample Junction.</p>
                             
 						<p><b>Hash Example</b></p>
 						<p>Let's say encryption/secret key for hashing is : 1234abc13as43</p>
@@ -182,8 +181,8 @@
 						<p>Final URL that comes to us will be </p>
 						<pre>http://samppoint.com/end/?status=1&sjid=12345&hash=c480ed2f40edbffb3a397a5230f7da6af92260bf</pre>
 						
-						<p>here we are using SHA-1 HASH HMAC Algorithm to generate Hash</p>
-						<p>This example can be verified using <a href="https://www.freeformatter.com/hmac-generator.htm">an online HMAC calculator</a>
+						<p>Here we are using SHA-1 HASH HMAC Algorithm to generate Hash.</p>
+						<p>This example can be verified using <a href="https://www.freeformatter.com/hmac-generator.htm">an online HMAC calculator.</a>
 						
 						<img src="https://files.readme.io/d6ef109-hmac.png" width="300px"></img>
 						
@@ -285,7 +284,7 @@ using (var hmacsha256 = new HMACSHA1(keyByte))
 					<p><b>Pros and Cons</b></p>
 					<p>Pros: S2S conversion tracking  does not use cookies but stores information server-side (in the client server). After the conversion happens the client server sends info to SampleJunction. With conversion to conversion tracking cookies may be cancelled by the respondents, denied from their browser or expire after a certain period and conversions can still be recorded. Furthermore you do not need to place a piece of code (the conversion code or pixel) in the client website making server to server conversion tracking the most precise.</p> 
 					
-					<p>Cons: you need an organized way to manage postback URLs in your server.
+					<p>Cons: You need an organized way to manage postback URLs in your server.
 					</p>
                 
                     <section class="sub-block" id="s2s-implementation">
@@ -296,14 +295,14 @@ using (var hmacsha256 = new HMACSHA1(keyByte))
                             </a>
                         </h3>
                     
-                        <p>In order to implement S2S postback, you have to send one way hit to our specified URL with session ID and status of that respondent</p>
+                        <p>In order to implement S2S postback, you have to send one way hit to our specified URL with session ID and status of that respondent.</p>
                             
 						<p><b>S2S Example</b></p>
-						<p>First you have to tell us your Server IP address, through which you will send us hit, so that we can add it to whitelisted IP address</p>
+						<p>First you have to tell us your Server IP address through which you will send us hit so that we can add it to whitelisted IP address.</p>
 						
-						<p>Let's say respondent completed your survey, before redirecting back the respondent to us, you make a asynchronous hit to our specified URL from your server like : http://samppoint.com/s2s/validation/?status=1&sjid=12345</p>
+						<p>Let's say respondent completed your survey, Before redirecting back the respondent to us, you make an asynchronous hit to our specified URL from your server like : http://samppoint.com/s2s/validation/?status=1&sjid=12345</p>
 						
-						<p>Once we get the hit, we will verify IP address of the hit to validate source. after that you can send respondent back to us and we can be sure that this respondent is validated</p>
+						<p>Once we get the hit, We will verify IP address of the hit to validate source. After that you can send respondent back to us so that we can be sure that this respondent is validated.</p>
                     
                     </section>
                 
@@ -317,12 +316,12 @@ using (var hmacsha256 = new HMACSHA1(keyByte))
                         </a>
                     </h2>
                     
-                    <p>Also called client-side, cookie-based, in-browser tracking. This method relies on the user’s browser to track conversions. Pixel-based tracking use cookies to track because they can store the session values in the cookie, and with the way pixels are designed to track, can extract this information from the browser easily. As a result, setting up an offer to tracking using pixels is very simple and only involves placing the HTML offer pixel on the conversion page. through which we can determine the validity of the respondents.</p>
+                    <p>Also called Client-side Tracking, Cookie-Based Tracking or In-browser Tracking. This method relies on user’s browser to track conversions. Pixel-based tracking uses cookies to track status because they can store the session values in the cookie. With the way pixels are designed to track, we can extract this information from the browser easily. As a result, setting up an offer to track using pixels is very simple and only involves placing the HTML offer pixel on the conversion page through which we can determine the validity of the respondents.</p>
 					
 					<p><b>Pros and Cons</b></p>
-					<p>Pros: Use pixel tracking when:  You don’t have the technical resources necessary to implement any other tracking method specified above</p>
+					<p>Pros: Use pixel tracking when you don’t have the technical resources necessary to implement any other tracking method specified above.</p>
 					
-					<p>Cons: This tracking relies on User cookies and browser, so it is not full proof as a user can delete cookies or browser can restrict cookies access.
+					<p>Cons: This tracking relies on User cookies and browser. So it is not full proof as a user can delete cookies or their browser can restrict cookies access..
 					</p>
                 
                     <section class="sub-block" id="pixel-implementation">
@@ -333,14 +332,14 @@ using (var hmacsha256 = new HMACSHA1(keyByte))
                             </a>
                         </h3>
                     
-                        <p>In order to implement Pixel tracking, you have to add a piece of our code in your end page, this code contains an Iframe to our site</p>
+                        <p>In order to implement Pixel tracking, you have to add a piece of our code in your end page, this code contains an Iframe to our site.</p>
                             
 						<p><b>Pixel method example</b></p>
-						<p>Whenever respondents go through our site, we place a cookie containing session id of respondent in their browser</p>
+						<p>Whenever respondents go through our site, we place a cookie containing session id of respondent in their browser.</p>
 						
-						<p>When that respondent reaches your end page, our pixel is fired through Iframe code, we then detect if respondent browser contains the same cookie. if cookie is found then we mark this as genuine else we add that respondent to our fraud list.</p>
+						<p>When that respondent reaches your end page, our pixel is fired through Iframe code, we then detect if respondent browser contains the same cookie. If cookie is found then we mark this as genuine else we add that respondent to our fraud list.</p>
 						
-						<p>Following is an example of pixel code which you have to implement at your end </p>
+						<p>Following is an example of pixel code which you have to be implemented at your end.</p>
 <pre>
 &lt;!-- This is a sample code, we will provide you exact code personally --&gt;
 &lt;noscript&gt;&lt;iframe src="https://samppoint.com/pixel/?linkid={SJID}" scrolling="no" frameborder="0" width="1" height="1" style="display:none;"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
