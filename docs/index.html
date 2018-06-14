@@ -280,12 +280,12 @@ using (var hmacsha256 = new HMACSHA1(keyByte))
                         </a>
                     </h2>
                     
-                    <p>(a.k.a. cookie-less tracking or S2S conversion tracking or post back URL conversion) It's a way to track conversions without the necessity to modify end page URLs. Whenever a respondents completes, terminates, quota-full .. before redirecting him back to us, you send us a hit from your server with the session ID for that respondents like SJID=12343 and status of that survey. Whenever we get a hit from your server, we first verify that request came from your server by verifying IP address of the server. once verified we store that information, rest of the process stays same, when respondent is redirected back to us</p>
+                    <p>(a.k.a. cookie-less tracking or S2S conversion tracking or post back URL conversion) It's a way to track conversions without the necessity to modify end page URLs. Whenever a respondents completes, terminates, quota-full .. before redirecting him back to us, you send us a hit from your server with the session ID for that respondents like SJID=12343 and status of that survey. Whenever we get a hit from your server, we first verify that request came from your server by verifying IP address of the server. once verified we store that information, rest of the process stay as it is, when respondent is redirected back to us</p>
 					
 					<p><b>Pros and Cons</b></p>
-					<p>Pros: S2S conversion tracking  does not use cookies but stores information server-side (in the client server). After the conversion happens the client server sends info to SampleJunction. With conversion to conversion tracking cookies may be cancelled by the respondents, denied from their browser or expire after a certain period and conversions can still be recorded. Furthermore you do not need to place a piece of code (the conversion code or pixel) in the client website making server to server conversion tracking the most precise. 
+					<p>Pros: S2S conversion tracking  does not use cookies but stores information server-side (in the client server). After the conversion happens the client server sends info to SampleJunction. With conversion to conversion tracking cookies may be cancelled by the respondents, denied from their browser or expire after a certain period and conversions can still be recorded. Furthermore you do not need to place a piece of code (the conversion code or pixel) in the client website making server to server conversion tracking the most precise.</p> 
 					
-					Cons: you need an organized way to manage postback URLs in your server.
+					<p>Cons: you need an organized way to manage postback URLs in your server.
 					</p>
                 
                     <section class="sub-block" id="s2s-implementation">
@@ -320,9 +320,9 @@ using (var hmacsha256 = new HMACSHA1(keyByte))
                     <p>Also called client-side, cookie-based, in-browser tracking. This method relies on the user’s browser to track conversions. Pixel-based tracking use cookies to track because they can store the session values in the cookie, and with the way pixels are designed to track, can extract this information from the browser easily. As a result, setting up an offer to tracking using pixels is very simple and only involves placing the HTML offer pixel on the conversion page. through which we can determine the validity of the respondents.</p>
 					
 					<p><b>Pros and Cons</b></p>
-					<p>Pros: Use pixel tracking when:  You don’t have the technical resources necessary to implement any other tracking method specified above
+					<p>Pros: Use pixel tracking when:  You don’t have the technical resources necessary to implement any other tracking method specified above</p>
 					
-					Cons: This tracking relies on User cookies and browser, so it is not full proof as a user can delete cookies or browser can restrict cookies access.
+					<p>Cons: This tracking relies on User cookies and browser, so it is not full proof as a user can delete cookies or browser can restrict cookies access.
 					</p>
                 
                     <section class="sub-block" id="pixel-implementation">
