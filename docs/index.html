@@ -93,7 +93,7 @@
                         </a>
                     </h2>
                 
-                    <p>To combat fraudulent panelists who attempt to record fraudulent completes with us, this document outlines a simple method of validating traffic for us to verify that the links being sent back have not been tampered.</p>
+                    <p>To combat respondents who attempt to mark their participation as completes with us fraudulently, we have this document which outlines few simple methods of validating traffic for us to ensure that the links being sent back, have not been tampered and correct status can be marked at our end.</p>
                 
                 </section>
 				
@@ -155,9 +155,9 @@
 					</p>
 					
 					<p><b>Pros and Cons</b></p>
-					<p>Pros: Hard to reverse, unique to every input, provides security. By adding a random salt value, you create a very different hashing algorithm. You also increase the search space size for brute force attacks, which run through all possible options.
+					<p>Pros: Hard to reverse, unique to every input, provides security. By adding a random salt value, you create a very different hashing algorithm. You also increase the search space size for brute force attacks, which run through all possible options. </p>
 					
-					Cons: you have to make little change in you existing code so that whenever you are redirecting back to us, you can compute and add hash in redirect URL.
+					<p>Cons: You have to make little change in you existing code so that whenever you are redirecting back to us, you can compute and add hash in redirect URL
 					</p>
                 
                     <section class="sub-block" id="hash-implementation">
@@ -280,7 +280,7 @@ using (var hmacsha256 = new HMACSHA1(keyByte))
                         </a>
                     </h2>
                     
-                    <p>(a.k.a. cookie-less tracking or S2S conversion tracking or post back URL conversion) It's a way to track conversions without the necessity to modify end page URLs. Whenever a respondents compeletes, terminates, quota-full .. before redirecting him back to us, you send us a hit from your server with the session ID for that respondents like SJID=12343 and status of that survey. Whenever we get a hit from your server, we first verify that request came from your server by verifying IP address of the server. once verified we store that information, rest of the process stays same, when respondent is redirected back to us</p>
+                    <p>(a.k.a. cookie-less tracking or S2S conversion tracking or post back URL conversion) It's a way to track conversions without the necessity to modify end page URLs. Whenever a respondents completes, terminates, quota-full .. before redirecting him back to us, you send us a hit from your server with the session ID for that respondents like SJID=12343 and status of that survey. Whenever we get a hit from your server, we first verify that request came from your server by verifying IP address of the server. once verified we store that information, rest of the process stays same, when respondent is redirected back to us</p>
 					
 					<p><b>Pros and Cons</b></p>
 					<p>Pros: S2S conversion tracking  does not use cookies but stores information server-side (in the client server). After the conversion happens the client server sends info to SampleJunction. With conversion to conversion tracking cookies may be cancelled by the respondents, denied from their browser or expire after a certain period and conversions can still be recorded. Furthermore you do not need to place a piece of code (the conversion code or pixel) in the client website making server to server conversion tracking the most precise. 
@@ -299,7 +299,7 @@ using (var hmacsha256 = new HMACSHA1(keyByte))
                         <p>In order to implement S2S postback, you have to send one way hit to our specified URL with session ID and status of that respondent</p>
                             
 						<p><b>S2S Example</b></p>
-						<p>First you have to tell us your Server IP addres, through which you will send us hit, so that we can add it to whitelisted IP address</p>
+						<p>First you have to tell us your Server IP address, through which you will send us hit, so that we can add it to whitelisted IP address</p>
 						
 						<p>Let's say respondent completed your survey, before redirecting back the respondent to us, you make a asynchronous hit to our specified URL from your server like : http://samppoint.com/s2s/validation/?status=1&sjid=12345</p>
 						
@@ -336,7 +336,7 @@ using (var hmacsha256 = new HMACSHA1(keyByte))
                         <p>In order to implement Pixel tracking, you have to add a piece of our code in your end page, this code contains an Iframe to our site</p>
                             
 						<p><b>Pixel method example</b></p>
-						<p>Whenever respondents go through our site, we place a cookie containg session id of respondent in their browser</p>
+						<p>Whenever respondents go through our site, we place a cookie containing session id of respondent in their browser</p>
 						
 						<p>When that respondent reaches your end page, our pixel is fired through Iframe code, we then detect if respondent browser contains the same cookie. if cookie is found then we mark this as genuine else we add that respondent to our fraud list.</p>
 						
